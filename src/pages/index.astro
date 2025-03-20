@@ -1,11 +1,19 @@
 ---
 import CaseStudyPreview from "../components/CaseStudyPreview.astro";
 import Layout from "../layouts/Layout.astro";
-import ChevronRight from "lucide-static/icons/chevron-right.svg";
+import Mail from "lucide-static/icons/mail.svg";
+import HeaderImage from "../assets/header.jpg";
+import Headshot from "../assets/headshot.jpg";
+import { Image } from "astro:assets";
 ---
 
 <Layout>
-  <header class="">
+  <header class="relative">
+    <Image
+      src={HeaderImage}
+      alt="Extra Bumpy"
+      class="absolute top-0 left-0 w-full h-full object-cover -z-10 opacity-50 blur-md"
+    />
     <div class="pt-40 pb-52 z-10">
       <h1 class="text-5xl font-bold text-center">
         We deliver top Roblox games
@@ -22,12 +30,19 @@ import ChevronRight from "lucide-static/icons/chevron-right.svg";
         laudantium magnam, enim dolore amet saepe! Veritatis quis ipsum nesciunt
         possimus illo.
       </p>
-      <p class="text-gray-500 mb-3">
+      <p class="text-gray-500 mb-10">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
         sit nulla unde repellendus harum ipsa praesentium laboriosam, dolorem
         laudantium magnam, enim dolore amet saepe! Veritatis quis ipsum nesciunt
         possimus illo.
       </p>
+
+      <Image
+        src={Headshot}
+        alt="Oscar W. Halland"
+        class="w-24 h-24 rounded-full object-cover mx-auto mb-4"
+      />
+
       <p class="text-gray-400 text-center font-medium">
         - Oscar W. Halland, Founder
       </p>
@@ -43,6 +58,7 @@ import ChevronRight from "lucide-static/icons/chevron-right.svg";
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           impressions={200100}
           rating={98}
+          favorites={2000}
           image="https://placehold.co/600x400"
         />
         <CaseStudyPreview
@@ -50,6 +66,7 @@ import ChevronRight from "lucide-static/icons/chevron-right.svg";
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           impressions={200100}
           rating={98}
+          favorites={2000}
           image="https://placehold.co/600x400"
         />
         <CaseStudyPreview
@@ -57,6 +74,7 @@ import ChevronRight from "lucide-static/icons/chevron-right.svg";
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           impressions={200100}
           rating={98}
+          favorites={2000}
           image="https://placehold.co/600x400"
         />
       </div>
@@ -73,10 +91,8 @@ import ChevronRight from "lucide-static/icons/chevron-right.svg";
         <a
           id="contact"
           href="mailto:hello@extrabumpy.com"
-          class="bg-white text-black px-4 py-2 rounded-full w-full max-w-xs text-center text-xl font-medium hover:bg-gray-100 hover:text-2xl transition-all"
-          >Contact Us <ChevronRight
-            class="w-4 h-4 inline-block align-middle"
-          /></a
+          class="bg-white text-black px-4 py-3 rounded-full w-full max-w-xs flex gap-2 leading-0 items-center justify-center text-xl font-medium hover:bg-gray-100 hover:text-2xl transition-all"
+          ><Mail class="w-5 h-5" />Send us an email</a
         >
       </div>
 

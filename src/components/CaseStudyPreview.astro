@@ -1,23 +1,32 @@
 ---
 import ThumbsUp from "lucide-static/icons/thumbs-up.svg";
 import User from "lucide-static/icons/user.svg";
-
+import ArrowRight from "lucide-static/icons/arrow-right.svg";
+import Star from "lucide-static/icons/star.svg";
 interface Props {
   title: string;
   description: string;
   impressions: number;
   rating: number;
+  favorites: number;
   image: string;
 }
 
-const { title, description, impressions, rating, image } = Astro.props;
+const { title, description, impressions, rating, favorites, image } =
+  Astro.props;
 
 const formattedImpressions = new Intl.NumberFormat("en-US", {
   style: "decimal",
   notation: "compact",
 }).format(impressions);
 
-const formattedRating = rating.toFixed(2);
+const formattedFavorites = new Intl.NumberFormat("en-US", {
+  style: "decimal",
+  notation: "compact",
+}).format(favorites);
+
+const formattedRating =
+  rating % 1 === 0 ? rating.toString() : rating.toFixed(2);
 ---
 
 <div
@@ -29,16 +38,27 @@ const formattedRating = rating.toFixed(2);
     <p class="text-gray-500 mb-4">
       {description}
     </p>
-    <div class="flex justify-between text-gray-400 font-medium text-sm">
-      <div>
+    <div class="grid grid-cols-3 w-full mb-6 gap-4">
+      <div class="bg-gray-100 rounded-lg p-3">
         <p>{formattedImpressions}</p>
         <User class="w-4 h-4" />
       </div>
 
-      <div>
+      <div class="bg-gray-100 rounded-lg p-3">
         <p>{formattedRating}%</p>
         <ThumbsUp class="w-4 h-4" />
       </div>
+
+      <div class="bg-gray-100 rounded-lg p-3">
+        <p>{formattedFavorites}</p>
+        <Star class="w-4 h-4" />
+      </div>
     </div>
+
+    <a
+      href="#"
+      class="border-2 border-blue-600 text-blue-600 w-full block text-center py-2 rounded-full transition-colors hover:bg-blue-600 hover:text-white"
+      >Read More <ArrowRight class="w-4 h-4 inline-block align-middle" /></a
+    >
   </div>
 </div>
