@@ -1,22 +1,38 @@
+---
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Extra Bumpy</title>
+  </head>
+  <body class="bg-blue-600 text-white">
+    <nav class="sticky top-0 bg-blue-600 z-10">
+      <div class="flex justify-between items-center py-4 container mx-auto">
+        <a href="#" class="font-medium text-lg font-serif">Extra Bumpy</a>
+        <div class="flex gap-8">
+          <a
+            href="#about"
+            class="hover:text-blue-300 focus:text-blue-300 transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#case-studies"
+            class="hover:text-blue-300 focus:text-blue-300 transition-colors"
+            >Case Studies</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-blue-300 focus:text-blue-300 transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+    <slot />
+  </body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

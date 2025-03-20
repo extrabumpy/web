@@ -1,11 +1,89 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import CaseStudyPreview from "../components/CaseStudyPreview.astro";
+import Layout from "../layouts/Layout.astro";
+import ChevronRight from "lucide-static/icons/chevron-right.svg";
 ---
 
 <Layout>
-	<Welcome />
+  <header class="">
+    <div class="pt-40 pb-52 z-10">
+      <h1 class="text-5xl font-bold text-center">
+        We deliver top Roblox games
+      </h1>
+    </div>
+  </header>
+
+  <section id="about" class="bg-white">
+    <div class="container mx-auto py-24 max-w-xl">
+      <h2 class="text-4xl font-bold text-center mb-6 text-black">About Us</h2>
+      <p class="text-gray-500 mb-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        sit nulla unde repellendus harum ipsa praesentium laboriosam, dolorem
+        laudantium magnam, enim dolore amet saepe! Veritatis quis ipsum nesciunt
+        possimus illo.
+      </p>
+      <p class="text-gray-500 mb-3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        sit nulla unde repellendus harum ipsa praesentium laboriosam, dolorem
+        laudantium magnam, enim dolore amet saepe! Veritatis quis ipsum nesciunt
+        possimus illo.
+      </p>
+      <p class="text-gray-400 text-center font-medium">
+        - Oscar W. Halland, Founder
+      </p>
+    </div>
+  </section>
+
+  <section id="case-studies" class="py-24 bg-gray-100 text-black">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-6">Case Studies</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <CaseStudyPreview
+          title="TBA"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          impressions={200100}
+          rating={98}
+          image="https://placehold.co/600x400"
+        />
+        <CaseStudyPreview
+          title="TBA"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          impressions={200100}
+          rating={98}
+          image="https://placehold.co/600x400"
+        />
+        <CaseStudyPreview
+          title="TBA"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          impressions={200100}
+          rating={98}
+          image="https://placehold.co/600x400"
+        />
+      </div>
+    </div>
+  </section>
+
+  <footer class="pt-32 pb-16">
+    <div class="container mx-auto grid grid-cols-2">
+      <div>
+        <h1 class="text-5xl font-serif mb-3">Extra Bumpy</h1>
+        <p class="text-gray-200 text-lg">We deliver top Roblox games</p>
+      </div>
+      <div class="flex items-center justify-end">
+        <a
+          id="contact"
+          href="mailto:hello@extrabumpy.com"
+          class="bg-white text-black px-4 py-2 rounded-full w-full max-w-xs text-center text-xl font-medium hover:bg-gray-100 hover:text-2xl transition-all"
+          >Contact Us <ChevronRight
+            class="w-4 h-4 inline-block align-middle"
+          /></a
+        >
+      </div>
+
+      <p class="col-span-2 mt-44 text-gray-100 text-sm text-center">
+        A subsidiary of Halland Technologies AS (VAT NO 929468724 MVA) &copy;
+        2025 All Rights Reserved
+      </p>
+    </div>
+  </footer>
 </Layout>
